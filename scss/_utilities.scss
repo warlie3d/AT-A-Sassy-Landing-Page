@@ -1,24 +1,27 @@
-  // SCSS Function that will make sure text is light on dark backgrounds, and dark on light backgrounds.
-  @function text-color-picker($color) {
-      @if(lightness($color) > 70) {
-          @return black;
-      }
+@function text-color-picker($color) {
 
-      @else {
-          @return white;
-      }
-  }
+    // Check if the lightness of the color is greater than 70
+    @if (lightness($color) > 70) {
+        // If true, return black
+        @return black;
+    }
 
-  // SCSS Mixin
-  @mixin set-bg($color) {
-      background-color: $color;
-      color: text-color-picker($color)
-  }
+    @else {
+        // If false, return white
+        @return white;
+    }
+}
 
-  // Standard CSS
-  .box {
-      max-width: 1100px;
-      padding: 0 30px;
-      margin: 0 auto;
-      overflow: auto;
-  }
+// SCSS Mixin
+@mixin set-bg($color) {
+    background-color: $color; // Set the background color to the provided color
+    color: text-color-picker($color); // Set the text color using the text-color-picker function
+}
+
+// Standard CSS
+.box {
+    max-width: 1100px;
+    padding: 0 30px;
+    margin: 0 auto;
+    overflow: auto;
+}

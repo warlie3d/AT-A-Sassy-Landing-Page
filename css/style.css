@@ -52,6 +52,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #a2d0fc;
+}
+
 .hero {
   background-color: #000814;
   color: white;
